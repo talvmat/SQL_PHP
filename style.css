@@ -21,15 +21,15 @@
 .main-content  h2 {
 	font-weight: bold;
 	font-size: 2em;
-	font-family: Arial, Verdana, sans-serif;
+	font-family: Arial, sans-serif;
 }
 
-
-.main-content img {
-	background-color: black;
-	z-index: 0;
+#instruction {
+	width: 80%;
+	background-color: red;
 
 }
+
 
 
 footer {
@@ -41,4 +41,8 @@ footer {
 	padding: 10px;
 	text-align: center;
 	font-size: 10px;
+	font-family: Arial;
 }
+
+
+

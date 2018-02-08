@@ -6,17 +6,31 @@
 		<meta name="author" content="Matti Talvela" />
 		<meta name="description" content="Introduction for web scripting course"/>
 		<link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src=js/FirstScripts.js></script>
+
+
 		<!-- CSS files -->
 		<link rel="stylesheet" href="style.css"/>
 	</head>
 
 	<body>
-		
+
+	
+
 		<div class="main-content">
 			<h1>Matti's page for web scripting course</h1>
+
+			<div id="instruction">
+				<h2>Plans for the website</h2>
+				<p>I'm planning to have this website as a portfolio of mine, linking for example my CV and other stuff here </p>
+			</div>
+
+			
+
 			<h2>Who am I?</h2>
-			<p>
-				"I'm international student from Aalto university Finland doing my spring semester here! I moved to New York (Brooklyn) two weeks ago. At first I had a small culture shock but I have used to local rythm of life quite fast and well. Back in Finland my majors (I study both business and engineering) are information networks (communications, math, programming industrial engineering and work psychology) and economics. I am 3rd year student and will (hopefully) have my bachelor's degree after this semester. 
+			<p >
+				"I'm international student from Aalto university Finland doing my spring semester here! Finland is a quite small country in northern Europe and in the population of the country is about a half of the population of New York. I moved to New York (Brooklyn) two weeks ago. At first I had a small culture shock but  I got used to local rythm of life pretty fast. Back in Finland my majors (I study both business and engineering) are information networks (communications, math, programming industrial engineering and work psychology) and economics. I am 3rd year student and will (hopefully) get my bachelor's degree after the spring semester. 
 			</p>
 			<p>
 				My passion is to work between human and technology helping people use and get advance of it. Currently I'm working in car rental industry as digital advisor: helping marketing, sales and operations departments with digital stuff, excel macros etc. Besides working I have also been active in student organizations and events, such as in world leading startup event Slush."
@@ -27,9 +41,21 @@
 
 
 			</p>
-			<div >
+			<p>
+				"Knock knock"
+			</p>
+			<button id="photoButton">Who's there?</button>	
+			
+			<div id="myPhoto"  style="display:none";>
 				<img class="photo" src="Matti.jpg" style="width: auto; height: auto; max-width: 250px; max-height: 350px" alt="Couldn't be loaded" />
 			</div>
+
+<script>
+					function opencontacts() {
+   						alert("Hello! I am an alert box!!");
+				</script>
+
+
 		</div><!--- Main content ends -->
 		
 
@@ -37,6 +63,8 @@
 		<footer id="down">
 			<p class="singature">Copyright 2018 by 
 				<span class="vcard"><span class="fn">Matti Talvela</span>, <span class="org"> Pace university, </span></span>
+				<button onclick="opencontacts()">Contact me</button>
+				
 				<a class="url fn" href="https://www.linkedin.com/in/mattitalvela">linkedIn</a>
 			</p>
 		</footer>	
