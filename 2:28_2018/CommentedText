@@ -1,0 +1,27 @@
+<?php
+
+//Link is opened to server called "localhost", username and password (both "admin") have been put in
+// and php file named "demo" has been run through the apache (or similar web server)
+$link = mysqli_connect("localhost", "root", "root", "demo");
+ 
+ // if linking to the server has problems (because of wrong location, log in or wrong file name) the
+ //problem message is promted.
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
+//php variable that contains a sql command to insert given values into pesrons -table's columns given below.
+$sql = "INSERT INTO persons (first_name, last_name, email_address) VALUES ('Wormy', 'VonWormenstein', 'email@email.com')";
+
+//Using mysqli library we do a mysql query to add infromation saved into the variable.
+//if both the link and the sql command turned out to be succesfull, message is created to tell that. 
+// if not, error message with given command line is promted.
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+
+//closes the link. Important for you cyber security!!
+mysqli_close($link);
+?>
