@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+</head>
+  <body>
+    <form method="post">
+        <p>
+            <label for="CourseName">Course Name:</label>
+            <input type="text" id="CourseName">
+        </p>
+        <p>
+            <label for="CourseYear">Course Year:</label>
+            <input type="text" id="CourseYear">
+        </p>
+        <p>
+            <label for="CourseID">Course ID:</label>
+            <input type="text" id="CourseID">
+        </p>
+        <input type="submit" value="Submit" onclick="addtoDB()">
+
+
+        <script>
+            function addtoDB() {
+              var xhttp; 
+              xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    document.getElementById("submitted").innerHTML = "form submitted";
+                }
+              };
+               var course_name = document.getElementById('CourseName').value;
+               var course_year = document.getElementById('CourseYear').value;
+               var course_id = document.getElementById('CourseID').value;
+               var queryString = "?CourseName=" + course_name +  "&CourseYear=" + course_year + "&CourseID=" + course_id;
+               console.log(queryString);
+               //this text should appear to url field but it doesn't
+               xhttp.open("GET", "AddRecords.php" + queryString, true);
+               xhttp.send(null); 
+
+            }
+      </script>
+    </form>
+    <p id=”submitted>Form will be submitted even if xhhtp status is not 4 and 200</p>
+  </body>
+</html>
+
+<!-- I have a problem adding new entrys to my database: I have there 14 courses each having ID number (1-14). When trying to
+  add new course it will appear with id 0 even if i try to give some other value for it.
+
+
+
+
