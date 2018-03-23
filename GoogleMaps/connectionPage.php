@@ -44,21 +44,24 @@ while ($row = mysqli_fetch_assoc($result)){
   $newnode->setAttribute("lat", $row['lat']);
   $newnode->setAttribute("lng", $row['lng']);
   $newnode->setAttribute("type", $row['type']);
+  $newnode->setAttribute("id", $row[$row]);
 }
 
 header("Content-type: text/xml"); 
 
-//$xmlfile = $doc->dump_mem();
-
-//$doc->xml xml_parse($testus, "text/xml");
-//echo $xml = new SimpleXMLElement($doc);
+//I tried to make so that the data would come out in xml-format, but after hours of trying 
+//gave up. The data comes now as a string and causes problems later on.
 echo $doc->saveXML();
-//$file= (printf ("<pre>%s</pre>", htmlentities ($doc->saveXML())));
+$file= (printf ("<pre>%s</pre>", htmlentities ($doc->saveXML())));
 //$file = file_get_contents('localhost:8888/connectionPage.php');
 //echo xml_parse($testus, $file) ;
 //$testus = new DOMParser();
 //echo $xml -> asXML();
 // echo $doc->saveXML('datas.xml');
+//$xmlfile = $doc->dump_mem();
+
+//$doc->xml xml_parse($testus, "text/xml");
+//echo $xml = new SimpleXMLElement($doc);
 
 
 
